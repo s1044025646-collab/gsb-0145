@@ -1,0 +1,23 @@
+{
+  "name": "cf-rec-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Local user-item collaborative filtering backend with biased matrix factorization (SQLite, API, CLI).",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "build": "node --experimental-strip-types --no-warnings --check src/cli/cli.ts && tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json",
+    "start": "node --experimental-strip-types --no-warnings src/api/server.ts",
+    "serve": "node --experimental-strip-types --no-warnings src/api/server.ts",
+    "cli": "node --experimental-strip-types --no-warnings src/cli/cli.ts",
+    "demo": "node --experimental-strip-types --no-warnings scripts/demo.ts",
+    "test": "node --experimental-strip-types --no-warnings --test \"tests/**/*.test.ts\""
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "typescript": "^5.6.3"
+  }
+}
