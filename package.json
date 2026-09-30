@@ -1,0 +1,23 @@
+{
+  "name": "local-cf-recommender",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Local user-item collaborative filtering backend with biased matrix factorization.",
+  "engines": { "node": ">=25.0.0" },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prestart": "npm run build",
+    "start": "node --experimental-sqlite dist/server.js",
+    "dev": "node --experimental-sqlite --experimental-strip-types src/server.ts",
+    "test": "node --experimental-sqlite --test --import tsx test/*.test.ts",
+    "demo": "node --experimental-sqlite --import tsx scripts/demo.ts",
+    "cli": "node --experimental-sqlite --import tsx src/cli.ts",
+    "stop": "node --import tsx scripts/stop.ts"
+  },
+  "dependencies": {
+    "@types/node": "^25.0.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}
